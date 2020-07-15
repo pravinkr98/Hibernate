@@ -28,15 +28,16 @@ public class SavingObjectTest {
 		ses=factory.openSession();
 		//add product details in Product object
 		prod=new Product();
-		prod.setPid(346);
-		prod.setPname("Chair");
-		prod.setPrice(6500);
-		prod.setQty(2);
+		prod.setPid(349);
+		prod.setPname("Bed");
+		prod.setPrice(22000);
+		prod.setQty(1);
 		//start transcation
 		try {
 			tx=ses.beginTransaction();
 			//save/insert object data(Product details) into database table
 			ses.save(prod);
+			System.out.println("1");
 			flag=true;
 		}
 		catch(HibernateException he) {
@@ -46,7 +47,9 @@ public class SavingObjectTest {
 		finally {
 			//commit or rollback transaction
 			if(flag==true) {
+				System.out.println("2");
 				tx.commit();
+				System.out.println("3");
 				System.out.println("Object is saved successfully.");
 			}
 			else {
