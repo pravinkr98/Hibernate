@@ -12,7 +12,7 @@
 			<property name="hibernate.connection.username">system</property>
 			<property name="hibernate.connection.password">manager</property> -->
 			
-<!-- 			<property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property> -->
+			<property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
 			<property name="connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>
 			<property name="connection.username">system</property>
 			<property name="connection.password">manager</property>
@@ -20,6 +20,7 @@
 			<!-- Hibernate properties -->
 			<property name="show_sql">true</property>
 			<property name="format_sql">true</property>
+			<property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
 			
 			<!-- Mapping file cfg -->
 			<mapping resource="com/ps/entity/Product.hbm.xml"/>

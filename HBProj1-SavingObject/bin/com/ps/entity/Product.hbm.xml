@@ -5,8 +5,10 @@
 	
 	<!-- cfg hibernate class to database table -->
 	<hibernate-mapping>
-		<class name="com.ps.entity.Product" table="Product">
-			<id name="pid" column="PID"/>
+		<class name="com.ps.entity.Product" table="Product" dynamic-insert="true">
+			<id name="pid" column="PID">
+				<generator class="increment"/>
+			</id>
 			<property name="pname" column="PNAME"/>
 			<property name="price" column="PRICE"/>
 			<property name="qty" column="QTY"/>
