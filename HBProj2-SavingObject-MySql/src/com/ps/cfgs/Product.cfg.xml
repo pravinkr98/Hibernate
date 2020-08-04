@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+	
+	<!-- cfg database info  -->
+	<hibernate-configuration>
+		<session-factory>
+		<!-- Connection cfg -->
+			<property name="connection.url">jdbc:mysql:///NTHB914DB</property>
+			<property name="connection.username">root</property>
+			<property name="connection.password">root</property>
+			
+			<!-- Hibernate properties -->
+			<property name="show_sql">true</property>
+			<property name="format_sql">true</property>
+			<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+			
+			<!-- Mapping file cfg -->
+			<mapping resource="com/ps/entity/Product.hbm.xml"/>
+		</session-factory>
+	</hibernate-configuration>
