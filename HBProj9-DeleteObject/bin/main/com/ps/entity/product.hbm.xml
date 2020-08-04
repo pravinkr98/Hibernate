@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+	<hibernate-mapping>
+		<class name="com.ps.entity.Product">
+			<id name="pid" type="long"/>
+			<property name="pname" type="string" length="15"/>
+			<property name="price" type="float"/>
+			<property name="qty" type="float"/>
+		</class>
+	</hibernate-mapping>
