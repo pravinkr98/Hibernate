@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+	<!-- cfg hibernate class to database table -->
+	<hibernate-mapping>
+		<class name="com.ps.entity.Product" table="Product" dynamic-insert="true">
+			<id name="pid" column="PID" length="5" type="int">
+				<generator class="increment"/>
+			</id>
+			<property name="pname" column="PNAME" type="string" length="20" not-null="true"/>
+			<property name="price" column="PRICE" type="float" scale="10" precision="2" not-null="true"/>
+			<property name="qty" column="QTY" type="float" scale="10" precision="2" not-null="true"/>
+			<!-- <property name="type" column="TYPE" type="float" scale="8" precision="2"/> -->
+		</class>
+	</hibernate-mapping>
