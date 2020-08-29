@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+	<!-- cfg hibernate class to database table -->
+	<hibernate-mapping>
+		<class name="com.ps.entity.Product" table="Product_STRING_ID" dynamic-insert="false">
+			<id name="pid" column="PID" type="string" length="20">
+				<generator class="com.ps.generators.RandomStringIdGenerator"/>
+			</id>
+			<property name="pname" column="PNAME" type="string" length="25"/>
+			<property name="price" column="PRICE" type="float"/>
+			<property name="qty" column="QTY" type="float"/>
+		</class>
+	</hibernate-mapping>
