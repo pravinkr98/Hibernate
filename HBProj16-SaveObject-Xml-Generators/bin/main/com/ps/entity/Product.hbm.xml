@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+	<!-- cfg hibernate class to database table -->
+	<hibernate-mapping>
+		<class name="com.ps.entity.Product" table="Product" dynamic-insert="true" dynamic-update="true">
+			<id name="pid" column="PID">
+				<!-- <generator class="assigned"/> -->
+				<!-- <generator class="increment"/> -->
+				<!-- <generator class="hilo">
+					<param name="table">HI_TAB</param>
+					<param name="column">HI_COL</param>
+					<param name="max_lo">5</param> 
+				</generator> -->
+				<!-- <generator class="seqhilo">
+					<param name="sequence">pid_seq</param>
+					<param name="max_lo">5</param>  
+				</generator> -->
+				<!-- <generator class="native">
+					<param name="sequence">pid_seq</param>
+					<param name="max_lo">5</param>  
+				</generator> -->
+				<generator class="select">
+					<param name="key">pname</param>
+				</generator>
+			</id>
+			<property name="pname" column="PNAME"/>
+			<property name="price" column="PRICE"/>
+			<property name="qty" column="QTY"/>
+		</class>
+	</hibernate-mapping>
