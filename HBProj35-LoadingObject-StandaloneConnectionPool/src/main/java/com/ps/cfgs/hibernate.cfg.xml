@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+        
+   <hibernate-configuration>
+   	<session-factory>
+   		<!-- Database connection cfg -->
+   		<!-- <property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+   		<property name="connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>
+   		<property name="connection.username">system</property>
+   		<property name="connection.password">manager</property> -->
+   		
+   		<!-- HikariCP properties -->
+   		<!-- Takes 20sec time before throwing error.. when pool can not give jdbc con object -->
+   		<!-- <property name="hibernate.hikari.connectionTimeout">20000</property>
+   		when pool is created it maintains 10 jdbc con object
+   		<property name="hibernate.hikari.minimumIdle">10</property>
+   		<property name="hibernate.hikari.maximumPoolSize">20</property>
+   		If any con object in the pool is idle for 30sec then it will be destroyed
+   		<property name="hibernate.hikari.idleTimeout">30000</property> -->
+   		
+   		<!-- Vibur properties -->
+   		<!-- <property name="hibernate.vibur.poolInitialSize">10</property>
+    	<property name="hibernate.vibur.poolMaxSize">100</property>
+    	<property name="hibernate.vibur.connectionIdleLimitInSeconds">30</property>
+    	<property name="hibernate.vibur.idleTimeout">30000</property> -->
+	    
+	    <!-- C3p0 properties -->
+   		<!-- <property name="hibernate.c3p0.min_size">5</property>
+		<property name="hibernate.c3p0.max_size">20</property>
+		<property name="hibernate.c3p0.acquire_increment">5</property>
+		<property name="hibernate.c3p0.timeout">30</property> -->
+   		
+   		<!-- agroal properties -->
+   		<!-- <property name="hibernate.agroal.minSize">5</property>
+		<property name="hibernate.agroal.maxSize">20</property>
+		<property name="hibernate.agroal.idleValidationTimeout">30</property> -->
+   		
+   		<!-- proxool properties --><!-- http://proxool.sourceforge.net/properties.html -->
+		<property name="hibernate.proxool.pool_alias">pool</property>
+    	<property name="hibernate.proxool.xml">proxool.xml</property>
+   		   		
+   		<!-- hibernate properties cfg -->
+   		<!-- <property name="dialect">org.hibernate.dialect.Oracle10gDialect</property> -->
+   		<property name="show_sql">true</property>
+   		<property name="format_sql">true</property>
+   		<!-- <property name="hibernate.connection.provider_class">org.hibernate.hikaricp.internal.HikariCPConnectionProvider</property> -->
+   		<!-- <property name="hibernate.connection.provider_class">org.hibernate.vibur.internal.ViburDBCPConnectionProvider</property> -->
+   		<!-- <property name="hibernate.connection.provider_class">org.hibernate.c3p0.internal.C3P0ConnectionProvider</property> -->
+   		<!-- <property name="hibernate.connection.provider_class">org.hibernate.agroal.internal.AgroalConnectionProvider</property> -->
+   		<property name="hibernate.connection.provider_class">org.hibernate.proxool.internal.ProxoolConnectionProvider</property>
+   		
+   		<!-- mapping file -->
+   		<mapping resource="com/ps/entity/insurancePolicy.hbm.xml"/>
+   	</session-factory>
+   </hibernate-configuration>
