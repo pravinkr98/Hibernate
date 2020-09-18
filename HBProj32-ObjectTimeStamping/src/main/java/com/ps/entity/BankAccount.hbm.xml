@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+	<hibernate-mapping>
+		<class name="com.ps.entity.BankAccount" table="BANK_ACCOUNT" dynamic-update="true">
+			<id name="acno" type="long">
+				<generator class="sequence">
+					<param name="sequence_name">ACNO_SEQ</param>
+				</generator>
+			</id>
+			<timestamp name="lastUpdate" />
+			<property name="holderName" type="string" length="20"/>
+			<property name="balance" type="double"/>
+			<property name="type" type="string" length="12"/>
+			<property name="openingDate"/>
+		</class>
+	</hibernate-mapping>
