@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+	<hibernate-mapping>
+		<class name="com.ps.entity.MobileCustomer" table="MOBILE_CUSTOMER" dynamic-update="true">
+			<id name="cno" type="int">
+				<generator class="sequence"/>
+			</id>
+			<version name="versionCount" type="int"/>
+			<property name="cname" type="string" length="20"/>
+			<property name="mobileNo" type="long"/>
+			<property name="callerTune" type="string" length="25"/>
+		</class>
+	</hibernate-mapping>
