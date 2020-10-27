@@ -5,10 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>home</groupId>
-  <artifactId>HBProj61-ComponentMapping</artifactId>
+  <artifactId>HBProj63-InheritanceMapping-TPCH</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
-  <name>HBProj61-ComponentMapping</name>
+  <name>HBProj63-InheritanceMapping-TPCH</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
