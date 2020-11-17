@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ps.entity">
+ <class name="UserInfo" table="USERINFO_BI">
+  <id name="userId" type="int">
+   <generator class="increment"/>
+  </id>
+  <property length="15" name="userName" type="string"/>
+  <property length="15" name="addrs" type="string"/>
+  <set name="phones" cascade="all-delete-orphan" lazy="extra" inverse="true">
+   <key column="user_id"/>		<!-- fk column -->
+   <one-to-many class="com.ps.entity.PhoneNumber"/>
+  </set>
+ </class>
+</hibernate-mapping>
