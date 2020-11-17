@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+        
+        <hibernate-mapping package="com.ps.entity">
+        	<class name="Employee" table="EMPLOYEE_COLLECTION">
+        		<id name="eno" type="int">
+        			<generator class="increment"/>
+        		</id>
+        		<property name="ename" type="string" length="15"/>
+        		<property name="addrs" type="string" length="15"/>
+        		<list name="friends" table="EMP_FRIENDS">
+        			<key column="EMP_ID"/>
+					<list-index column="FRIEND_NO" base="1"/>
+					<element column="FRIEND_NAME" type="string" length="15"/>
+        		</list>
+        		<bag name="relativeList" table="EMP_RELATIVE">
+        			<key column="EMP_ID"/>
+        			<element column="RELATIVE_NAME" type="string" length="15"/>
+        		</bag>
+        		<set name="phones" table="EMP_PHONES">
+        			<key column="EMP_ID"/>
+        			<element column="MOBILE_NO" type="long"/>
+        		</set>
+        		<map name="accounts" table="EMP_ACCOUNTS">
+        			<key column="EMP_ID"/>
+        			<map-key column="BANK_NAME" type="string" length="10"/>
+        			<element column="ACCOUNT_NO" type="long"/>
+        		</map>
+        	</class>
+        </hibernate-mapping>
