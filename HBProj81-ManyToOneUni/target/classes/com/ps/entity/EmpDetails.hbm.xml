@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ps.entity">
+ <class name="EmpDetails" table="EMP_DETAILS">
+  <id name="eno" type="int">
+   <generator class="increment"/>
+  </id>
+  <property name="ename" type="string" length="15"/>
+  <property name="eadd" type="string" length="15"/>
+  <property name="salary" type="float" scale="2" precision="8"/>
+  <many-to-one name="dept" class="com.ps.entity.Department" column="DEPT_NO" cascade="all" lazy="proxy"/>
+ </class>
+</hibernate-mapping>
