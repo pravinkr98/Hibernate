@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.ps.entity">
+	<class name="Patient" table="PATIENT1">
+		<id name="pid" type="int">
+			<generator class="sequence">
+				<param  name="sequence_name">pat_id_seq</param>
+			</generator>
+		</id>
+		<property name="pname" type="string" length="15"/>
+		<property name="problem" type="string" length="15"/>
+		<set name="doctors" table="DOCTORS_PATIENTS1" cascade="all" lazy="extra" inverse="true">
+			<key column="PATIENT_ID"/>
+			<many-to-many class="com.ps.entity.Doctor" column="DOCTOR_ID"/>
+		</set>
+	</class>
+</hibernate-mapping>

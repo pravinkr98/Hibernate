@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ps.entity">
+ <class name="Doctor" table="DOCTOR1">
+  <id name="did" type="int">
+   <generator class="increment"/>
+  </id>
+  <property length="15" name="dname" type="string"/>
+  <property length="15" name="hospital" type="string"/>
+  <property length="15" name="qualification" type="string"/>  
+  <idbag name="patients" table="DOCTORS_PATIENTS1" cascade="all" lazy="extra">
+  	<collection-id type="int" column="relation_id">
+  		<generator class="increment"/>
+  	</collection-id>
+   <key column="DOCTOR_ID"/>
+   <many-to-many class="com.ps.entity.Patient" column="PATIENT_ID"/>
+  </idbag>
+ </class>
+</hibernate-mapping>
